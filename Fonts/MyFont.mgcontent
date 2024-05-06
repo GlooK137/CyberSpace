@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>/home/glook/Documents/PL/C#/monogame_1/Fonts/MyFont.spritefont</SourceFile>
+  <SourceTime>2024-04-30T17:04:19.7020728+05:00</SourceTime>
+  <DestFile>/home/glook/Documents/PL/C#/monogame_1/Fonts/MyFont.xnb</DestFile>
+  <DestTime>2024-04-30T17:04:21.5987396+05:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2022-07-26T16:44:56+05:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2022-07-26T16:44:56+05:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
