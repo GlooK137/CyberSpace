@@ -1,2 +1,5 @@
 obj
 bin
+Content/bin
+Content/obj
+.mgstats
