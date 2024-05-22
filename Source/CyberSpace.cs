@@ -8,15 +8,16 @@ namespace monogame_1
     {
         private GraphicsDeviceManager _graphics;
         private Texture2D _backgrountTexture;
+        private Texture2D _messageTexture;
         private SpriteBatch _spriteBatch;
 
         private GameMap _gameMap;
         private SpriteFont _pixelFont;
 
-        
         // Тут будем создавать экземпляры классов Player и InputManager
         private Player _player;
         private InputManager _inputManager;
+        private MessageDisplay _messageDisplay;
 
         public Game1()
         {
@@ -38,23 +39,34 @@ namespace monogame_1
 
             base.Initialize();
         }
+            
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             _pixelFont = Content.Load<SpriteFont>("Fonts/PixelFont");
+            _messageDisplay = new MessageDisplay(_pixelFont);
+            _messageDisplay.LoadContent(Content);
 
             _backgrountTexture = Content.Load<Texture2D>("Textures/Backgrounds/test_bg");
-            
+
             // Инициализация ресурсов игрока
             _player.LoadContent(Content, GraphicsDevice);
         }
 
         protected override void Update(GameTime gameTime)
         {
-            _inputManager.Update(gameTime);
-            _player.Update(gameTime);
+            if (!_messageDisplay.IsVisible)
+            {
+              _inputManager.Update(gameTime);
+              _player.Update(gameTime);
+            }
+            else
+            {
+              _messageDisplay.Update(gameTime);
+            }
+
             base.Update(gameTime);
         }
 
@@ -64,7 +76,7 @@ namespace monogame_1
             _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
             _spriteBatch.Draw(_backgrountTexture, new Vector2(0,0), Color.White);
 
-            _spriteBatch.DrawString(_pixelFont, "Пример текста", new Vector2(100, 100), Color.Black);
+            _messageDisplay.Draw(_spriteBatch, _graphics);
             
             _player.Draw(_spriteBatch);
             
