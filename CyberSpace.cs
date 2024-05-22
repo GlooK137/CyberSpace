@@ -40,7 +40,7 @@ namespace monogame_1
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            _backgrountTexture = Content.Load<Texture2D>("Background");
+            _backgrountTexture = Content.Load<Texture2D>("Textures/Backgrounds/test_bg");
             
             // Инициализация ресурсов игрока
             _player.LoadContent(Content, GraphicsDevice);

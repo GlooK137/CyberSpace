@@ -13,7 +13,7 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin background.png
+#begin Textures/Backgrounds/test_bg.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -23,7 +23,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:background.png;Background
+/build:Textures/Backgrounds/test_bg.png
 
 #begin Textures/Player/Back/Back_Animate_1.png
 /importer:TextureImporter
@@ -109,18 +109,6 @@
 /processorParam:TextureFormat=Color
 /build:Textures/Player/Left/Left_Animate_1.png
 
-#begin Textures/Player/Left/Left_Animate_1.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Textures/Player/Left/Left_Animate_1.png
-
 #begin Textures/Player/Left/Left_Animate_2.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -132,30 +120,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Textures/Player/Left/Left_Animate_2.png
-
-#begin Textures/Player/Left/Left_Animate_2.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Textures/Player/Left/Left_Animate_2.png
-
-#begin Textures/Player/Left/Left_State.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Textures/Player/Left/Left_State.png
 
 #begin Textures/Player/Left/Left_State.png
 /importer:TextureImporter
