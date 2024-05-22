@@ -11,6 +11,8 @@ namespace monogame_1
         private SpriteBatch _spriteBatch;
 
         private GameMap _gameMap;
+        private SpriteFont _pixelFont;
+
         
         // Тут будем создавать экземпляры классов Player и InputManager
         private Player _player;
@@ -40,6 +42,9 @@ namespace monogame_1
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            _pixelFont = Content.Load<SpriteFont>("Fonts/PixelFont");
+
             _backgrountTexture = Content.Load<Texture2D>("Textures/Backgrounds/test_bg");
             
             // Инициализация ресурсов игрока
@@ -58,6 +63,8 @@ namespace monogame_1
             GraphicsDevice.Clear(Color.CornflowerBlue);
             _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
             _spriteBatch.Draw(_backgrountTexture, new Vector2(0,0), Color.White);
+
+            _spriteBatch.DrawString(_pixelFont, "Пример текста", new Vector2(100, 100), Color.Black);
             
             _player.Draw(_spriteBatch);
             
