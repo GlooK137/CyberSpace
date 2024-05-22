@@ -2,7 +2,7 @@
 <XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics">
   <Asset Type="Graphics:FontDescription">
     <FontName>./pixelcyr_normal.ttf</FontName> <!-- Нужно указать правильный путь к TTF файлу шрифта -->
-    <Size>64</Size> <!-- Размер шрифта -->
+    <Size>32</Size> <!-- Размер шрифта -->
     <Spacing>0</Spacing> <!-- Расстояние между символами -->
     <UseKerning>true</UseKerning> <!-- Использовать кернинг шрифта, если доступен -->
     <Style>Regular</Style> <!-- Стиль шрифта: Regular, Bold, Italic -->

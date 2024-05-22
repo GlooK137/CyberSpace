@@ -176,3 +176,15 @@
 /processorParam:TextureFormat=Color
 /build:Textures/Player/Right/Right_State.png
 
+#begin Textures/UI/Message/Message.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/UI/Message/Message.png
+
