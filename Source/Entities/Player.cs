@@ -46,7 +46,6 @@ namespace monogame_1 {
     }
 
     public void LoadContent(ContentManager content, GraphicsDevice graphicsDevice) {
-      // Симуляция загрузки текстуры. В реальном проекте загрузите текстуру из Content.
       _stateFrontTexture = content.Load < Texture2D > ("Textures/Player/Front/Front_State");
       _stateBackTexture = content.Load < Texture2D > ("Textures/Player/Back/Back_State");
       _stateLeftTexture = content.Load < Texture2D > ("Textures/Player/Left/Left_State");
