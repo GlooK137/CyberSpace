@@ -14,7 +14,6 @@ namespace monogame_1
         private GameMap _gameMap;
         private SpriteFont _pixelFont;
 
-        // Тут будем создавать экземпляры классов Player и InputManager
         private Player _player;
         private InputManager _inputManager;
         private MessageDisplay _messageDisplay;
@@ -31,7 +30,6 @@ namespace monogame_1
 
         protected override void Initialize()
         {
-            // Конфигурация и инициализация игровых элементов
             _gameMap = new GameMap();
             _gameMap.Objects[0,0] = new GameObject(true);
             _player = new Player(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight, Constants.Scale, _gameMap);
@@ -51,7 +49,6 @@ namespace monogame_1
 
             _backgrountTexture = Content.Load<Texture2D>("Textures/Backgrounds/test_bg");
 
-            // Инициализация ресурсов игрока
             _player.LoadContent(Content, GraphicsDevice);
         }
 
