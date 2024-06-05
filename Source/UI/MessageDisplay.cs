@@ -8,9 +8,15 @@ namespace monogame_1
     public class MessageDisplay
     {
         private Texture2D _messageTexture;
-        private string _messageText;
+        private string _messageText = "";
         private SpriteFont _font;
         private bool _isVisible;
+
+        public void SetMessage(string message)
+        {
+            _messageText = message;
+            _isVisible = true; // Показать сообщение при его установке
+        }
 
         public bool IsVisible
         {
@@ -27,7 +33,6 @@ namespace monogame_1
         public void LoadContent(ContentManager content)
         {
             _messageTexture = content.Load<Texture2D>("Textures/UI/Message/Message");
-            _messageText = "Здорово! Какое чудесное утро, хочу спать! Или опять играть до ночи!";
         }
 
         public void Update(GameTime gameTime)

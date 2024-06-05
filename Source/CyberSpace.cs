@@ -15,7 +15,7 @@ namespace monogame_1
 
         private Player _player;
         private InputManager _inputManager;
-        private MessageDisplay _messageDisplay;
+        public static MessageDisplay _messageDisplay;
 
         public static bool InBattleMode { get; set; } = false;
 
@@ -80,10 +80,11 @@ namespace monogame_1
             }
             else
             {
-              _messageDisplay.Draw(_spriteBatch, _graphics);
               _spriteBatch.Draw(_backgrountTexture, new Vector2(0,0), Color.White);
               _player.Draw(_spriteBatch);
             }
+
+            _messageDisplay.Draw(_spriteBatch, _graphics);
             _spriteBatch.End();
             base.Draw(gameTime);
         }

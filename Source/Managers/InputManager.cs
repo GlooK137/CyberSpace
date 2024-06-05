@@ -31,6 +31,7 @@ namespace monogame_1 {
                     _player.MoveRight();
                 } else if (keyboardState.IsKeyDown(Keys.Space)) {
                     _player.EnterBattleMode();
+                    Game1._messageDisplay.SetMessage("Это новое сообщение для игрока!");
                 }
             }
         }
