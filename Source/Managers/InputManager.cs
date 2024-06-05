@@ -12,44 +12,35 @@ namespace monogame_1 {
         public void Update(GameTime gameTime) {
             var keyboardState = Keyboard.GetState();
 
-            // Обработка ввода с клавиатуры
-            ProcessKeyboardInput(keyboardState);
+            if (!Game1.InBattleMode) {
+                ProcessKeyboardInputForMovement(keyboardState);
+            } else {
+                ProcessKeyboardInputForBattle(keyboardState);
+            }
         }
 
-        private void ProcessKeyboardInput(KeyboardState keyboardState) {
-            // Проверяем, не двигается ли в данный момент игрок
+        private void ProcessKeyboardInputForMovement(KeyboardState keyboardState) {
             if (!_player.IsMoving) {
                 if (keyboardState.IsKeyDown(Keys.W)) {
-                    MovePlayer(Direction.Up);
+                    _player.MoveUp();
                 } else if (keyboardState.IsKeyDown(Keys.S)) {
-                    MovePlayer(Direction.Down);
+                    _player.MoveDown();
                 } else if (keyboardState.IsKeyDown(Keys.A)) {
-                    MovePlayer(Direction.Left);
+                    _player.MoveLeft();
                 } else if (keyboardState.IsKeyDown(Keys.D)) {
-                    MovePlayer(Direction.Right);
+                    _player.MoveRight();
+                } else if (keyboardState.IsKeyDown(Keys.Space)) {
+                    _player.EnterBattleMode();
                 }
             }
         }
 
-        private void MovePlayer(Direction direction) {
-            // Передвигаем игрока в зависимости от направления
-            switch (direction) {
-                case Direction.Up:
-                    _player.MoveUp();
-                    break;
-                case Direction.Down:
-                    _player.MoveDown();
-                    break;
-                case Direction.Left:
-                    _player.MoveLeft();
-                    break;
-                case Direction.Right:
-                    _player.MoveRight();
-                    break;
-            }
+        private void ProcessKeyboardInputForBattle(KeyboardState keyboardState) {
+            // Здесь можно обработать нажатие клавиш для действий в бою
+            if (keyboardState.IsKeyDown(Keys.Enter)) {
+                    _player.ExitBattleMode();
+                }
         }
-
-        // Вспомогательное перечисление для направлений движения
         enum Direction {
             Up,
             Down,

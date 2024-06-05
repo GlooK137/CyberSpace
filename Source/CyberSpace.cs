@@ -8,7 +8,6 @@ namespace monogame_1
     {
         private GraphicsDeviceManager _graphics;
         private Texture2D _backgrountTexture;
-        private Texture2D _messageTexture;
         private SpriteBatch _spriteBatch;
 
         private GameMap _gameMap;
@@ -17,6 +16,8 @@ namespace monogame_1
         private Player _player;
         private InputManager _inputManager;
         private MessageDisplay _messageDisplay;
+
+        public static bool InBattleMode { get; set; } = false;
 
         public Game1()
         {
@@ -70,13 +71,19 @@ namespace monogame_1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
-            _spriteBatch.Draw(_backgrountTexture, new Vector2(0,0), Color.White);
 
-            _messageDisplay.Draw(_spriteBatch, _graphics);
-            
-            _player.Draw(_spriteBatch);
-            
+            _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
+
+            if (Game1.InBattleMode)
+            {
+              //_spriteBatch.Draw(_battleBackgroundTexture, new Vector2(0, 0), Color.White);
+            }
+            else
+            {
+              _messageDisplay.Draw(_spriteBatch, _graphics);
+              _spriteBatch.Draw(_backgrountTexture, new Vector2(0,0), Color.White);
+              _player.Draw(_spriteBatch);
+            }
             _spriteBatch.End();
             base.Draw(gameTime);
         }
