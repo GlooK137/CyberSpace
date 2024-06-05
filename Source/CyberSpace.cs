@@ -7,7 +7,8 @@ namespace monogame_1
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
-        private Texture2D _backgrountTexture;
+        private Texture2D _backgroundTexture;
+        private Texture2D _homeBackgroundTexture;
         private SpriteBatch _spriteBatch;
 
         private GameMap _gameMap;
@@ -48,7 +49,8 @@ namespace monogame_1
             _messageDisplay = new MessageDisplay(_pixelFont);
             _messageDisplay.LoadContent(Content);
 
-            _backgrountTexture = Content.Load<Texture2D>("Textures/Backgrounds/test_bg");
+            _homeBackgroundTexture = Content.Load<Texture2D>("Textures/Backgrounds/home_bg");
+            _backgroundTexture = _homeBackgroundTexture;
 
             _player.LoadContent(Content, GraphicsDevice);
         }
@@ -80,7 +82,7 @@ namespace monogame_1
             }
             else
             {
-              _spriteBatch.Draw(_backgrountTexture, new Vector2(0,0), Color.White);
+              _spriteBatch.Draw(_backgroundTexture, new Vector2(0,0), Color.White);
               _player.Draw(_spriteBatch);
             }
 

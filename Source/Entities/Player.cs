@@ -14,7 +14,7 @@ namespace monogame_1 {
     private GameMap _gameMap;
 
     private Texture2D _playerCurrentTexture;
-    private Vector2 _playerPosition;
+    public static Vector2 _playerPosition { get; set; }
     private Vector2 _playerScale;
     private Vector2 _targetPosition;
     private readonly int _scale;
@@ -40,7 +40,7 @@ namespace monogame_1 {
     public Player(int screenWidth, int screenHeight, int scale, GameMap gameMap) {
       _scale = scale;
       _gameMap = gameMap;
-      _playerPosition = new Vector2(0, (Constants.Cell * 2 - SquareHeight) * _scale);
+      _playerPosition = new Vector2(0, (Constants.Cell * 2 - SquareHeight - 8) * _scale);
       _playerScale = new Vector2(_scale, _scale);
       _targetPosition = _playerPosition;
     }
@@ -87,7 +87,6 @@ namespace monogame_1 {
 
     public void EnterBattleMode() {
     Game1.InBattleMode = true;
-    _targetPosition = _playerPosition;
     }
 
     // Выход из режима боя
@@ -163,7 +162,8 @@ namespace monogame_1 {
     }
 
     public void MoveLeft() {
-      _targetPosition.X -= Constants.MoveDistance * _scale;
+      if(_playerPosition.X - Constants.MoveDistance * _scale > 128)
+        _targetPosition.X -= Constants.MoveDistance * _scale;
     }
 
     public void MoveRight() {
