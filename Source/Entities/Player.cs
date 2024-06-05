@@ -85,6 +85,16 @@ namespace monogame_1 {
       SmoothMovement(gameTime);
     }
 
+    public void EnterBattleMode() {
+    Game1.InBattleMode = true;
+    _targetPosition = _playerPosition;
+    }
+
+    // Выход из режима боя
+    public void ExitBattleMode() {
+      Game1.InBattleMode = false;
+    }
+
     private void StateFrame(){
         // Когда игрок стоит на месте, возвращается к текстуре состояния
         _currentAnimationFrame = 0;
